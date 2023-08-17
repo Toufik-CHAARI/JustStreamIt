@@ -33,9 +33,9 @@ body {
 }
 
 #top-7-movies-overall,
-#action-movie-container,
-#adventure-movie-container,
-#animation-movie-container {
+#sci-fi-movie-container,
+#fantasy-movie-container,
+#family-movie-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -213,7 +213,7 @@ li a:hover:not(.active) {
 }
 
 .scroll-left {
-  left: 0px;
+  left: 0;
 }
 
 .scroll-right {

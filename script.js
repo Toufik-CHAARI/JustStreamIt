@@ -20,7 +20,8 @@ const displayMovies = (movies, elementId, includeSummary = false) => {
     movieDiv.innerHTML = `
       <img src="${movie.image_url}" alt="${movie.title}">
       <div class="${includeSummary ? 'text-block' : ''}">
-        <h3>${movie.title}</h3>
+      ${elementId === 'top-movie-overall' ? `<h3>${movie.title}</h3>` : ''}
+        
         ${includeSummary ? 
           `<p id="summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><button>Play</button>` : 
           `<p>IMDb Score: ${movie.imdb_score}</p>`}
@@ -89,9 +90,9 @@ function scrollToRight(elementId) {
 
 fetchTopOverallMovie();
 fetchTop7OverallMovies();
-fetchTopMoviesByGenre('Sci-Fi', 'action-movie-container');
-fetchTopMoviesByGenre('Fantasy', 'adventure-movie-container');
-fetchTopMoviesByGenre('Family', 'animation-movie-container');
+fetchTopMoviesByGenre('Sci-Fi', 'sci-fi-movie-container');
+fetchTopMoviesByGenre('Fantasy', 'fantasy-movie-container');
+fetchTopMoviesByGenre('Family', 'family-movie-container');
 console.log("Hello World");
 
 

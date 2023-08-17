@@ -19,14 +19,12 @@
 
   <div class="container">
 
-    <h2>Top Rated Movie Overall</h2>
+    <h2>Meilleur Film</h2>
     <div id="top-movie-overall" ></div>
 
 
     <div class="scrolling-wrapper">
-    <h2>Films les mieux notés</h2>
-
-   
+    <h2>Films les mieux notés</h2>   
     
     <button class="scroll-btn scroll-left" onclick="scrollToLeft('top-7-movies-overall')">&lt;</button>
     <div id="top-7-movies-overall"></div>
@@ -35,15 +33,33 @@
 
     </div>
 
-    <h2>Action Movies</h2>
-    <div id="action-movie-container"></div>
+    <div class="scrolling-wrapper">
+    <h2>Science Fiction</h2>
 
-    <h2>Adventure Movies</h2>
-    <div id="adventure-movie-container"></div>
+    <button class="scroll-btn scroll-left" onclick="scrollToLeft('sci-fi-movie-container')">&lt;</button>    
+    <div id="sci-fi-movie-container"></div>
+    <button class="scroll-btn scroll-right" onclick="scrollToRight('sci-fi-movie-container')">&gt;</button>
+    </div>
 
-    <h2>Animation Movies</h2>
-    <div id="animation-movie-container"></div>
+    <div class="scrolling-wrapper">
+    <h2>Fantaisies</h2>
+    <button class="scroll-btn scroll-left" onclick="scrollToLeft('fantasy-movie-container')">&lt;</button> 
+    <div id="fantasy-movie-container"></div>
+    <button class="scroll-btn scroll-right" onclick="scrollToRight('fantasy-movie-container')">&gt;</button>
+    </div>
+
+
+    <div class="scrolling-wrapper">
+    <h2>Familial</h2>
+    <button class="scroll-btn scroll-left" onclick="scrollToLeft('family-movie-container')">&lt;</button> 
+    <div id="family-movie-container"></div>
+    <button class="scroll-btn scroll-right" onclick="scrollToRight('family-movie-container')">&gt;</button>
+    </div>
+
   </div>
+
+
+
 
   <!-- Modal -->
 <div id="myModal" class="modal">
