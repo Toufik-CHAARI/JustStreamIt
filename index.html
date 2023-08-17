@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Movies</title>
-  <link rel="stylesheet" href="styles.css"> <!-- assurez-vous que le chemin est correct -->
+  <title>JustStreamIt</title>
+  <link rel="stylesheet" href="styles.css"> 
+  
 </head>
 <body>
 
@@ -17,14 +18,22 @@
 
 
   <div class="container">
-    
-    <h2>Top Rated Movie Overall</h2>
 
+    <h2>Top Rated Movie Overall</h2>
     <div id="top-movie-overall" ></div>
 
-    <h2>Films les mieux notés</h2>
-    <div id="top-7-movies-overall"></div>
 
+    <div class="scrolling-wrapper">
+    <h2>Films les mieux notés</h2>
+
+   
+    
+    <button class="scroll-btn scroll-left" onclick="scrollToLeft('top-7-movies-overall')">&lt;</button>
+    <div id="top-7-movies-overall"></div>
+      
+    <button class="scroll-btn scroll-right" onclick="scrollToRight('top-7-movies-overall')">&gt;</button>
+
+    </div>
 
     <h2>Action Movies</h2>
     <div id="action-movie-container"></div>
@@ -36,6 +45,27 @@
     <div id="animation-movie-container"></div>
   </div>
 
-  <script src="script.js"></script> <!-- assurez-vous que le chemin est correct -->
+  <!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span id="modal-close-button" class="close">&times;</span>  
+    <img id="modal-image" src="" alt="">
+    <h1 id="modal-title"></h1>
+    <p id="modal-genres"></p>
+    <p id="modal-year"></p>
+    <p id="modal-imdb"></p>
+    <p id="modal-votes"></p>
+    <p id="modal-directors"></p>
+    <p id="modal-actors"></p>
+    <p id="modal-writers"></p>
+  </div>
+</div>
+
+   
 </body>
+
+<footer>
+  <script src="script.js"></script>
+  </footer>
+
 </html>
