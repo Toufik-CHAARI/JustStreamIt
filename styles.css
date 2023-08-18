@@ -65,8 +65,7 @@ h2 {
   background-color: transparent; 
   color: white;
   padding-left: 20px;
-  padding-right: 20px;
-  font-size:40 px;
+  padding-right: 20px;  
   width : 20%;
   height: 30%;
   text-align: justify;
@@ -102,7 +101,7 @@ button:hover {
 
 .movie img {
   max-width: 100%;
-  max-height: auto;
+  height: auto;
   
   
 }
@@ -198,7 +197,7 @@ li a:hover:not(.active) {
 }
 
 .scroll-btn {
-  background: blue;
+  background: transparent;
   
   width:30px;  
   border: none;

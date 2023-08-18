@@ -1,6 +1,7 @@
 const showModal = (movie) => {
   const modal = document.getElementById('myModal');
   document.getElementById('modal-image').src = movie.image_url;
+  document.getElementById('modal-image').alt = movie.title;
   document.getElementById('modal-title').innerText = `Titre: ${movie.title}`;
   document.getElementById('modal-genres').innerText = movie.genres.join(', ');
   document.getElementById('modal-year').innerText = `Date de sortie : ${movie.year}`;
@@ -46,28 +47,28 @@ const fetchTopOverallMovie = async () => {
 const fetchTopMoviesByGenre = async (genre, elementId) => {
   let url = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
   const allMovies = [];
-  while (allMovies.length < 15) {
+  while (allMovies.length < 7) {
     const response = await fetch(url);
     const data = await response.json();
     allMovies.push(...data.results);
     if (data.next) url = data.next;
     else break;
   }
-  const topMovies = allMovies.slice(0, 15);
+  const topMovies = allMovies.slice(0, 7);
   displayMovies(topMovies, elementId);
 };
 
 const fetchTop7OverallMovies = async () => {
   let url = `http://localhost:8000/api/v1/titles/?sort_by=-imdb_score`;
   const top7Movies = [];
-  while (top7Movies.length < 15) {
+  while (top7Movies.length < 7) {
     const response = await fetch(url);
     const data = await response.json();
     top7Movies.push(...data.results);
     if (data.next) url = data.next;
     else break;
   }
-  const topMovies2 = top7Movies.slice(0, 15);
+  const topMovies2 = top7Movies.slice(0, 7);
   displayMovies(topMovies2, 'top-7-movies-overall');
 };
 
