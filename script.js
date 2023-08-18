@@ -1,4 +1,6 @@
 const showModal = (movie) => {
+  /* Code to populate the modal with requested movie details and display them */
+  /* ... */
   const modal = document.getElementById('myModal');
   document.getElementById('modal-image').src = movie.image_url;
   document.getElementById('modal-image').alt = movie.title;
@@ -14,6 +16,7 @@ const showModal = (movie) => {
 };
 
 const displayMovies = (movies, elementId, includeSummary = false) => {
+   /* Code to create movie elements, add event listeners, and append to the container */  
   const container = document.getElementById(elementId);
   movies.forEach(movie => {
     const movieDiv = document.createElement('div');
@@ -36,7 +39,9 @@ const displayMovies = (movies, elementId, includeSummary = false) => {
   });
 };
 
+
 const fetchTopOverallMovie = async () => {
+  /* Code to fetch top movie based on IMDb score and display it by calling the displayMovies function */  
   const url = `http://localhost:8000/api/v1/titles/?sort_by=-imdb_score`;
   const response = await fetch(url);
   const data = await response.json();
@@ -45,6 +50,8 @@ const fetchTopOverallMovie = async () => {
 };
 
 const fetchTopMoviesByGenre = async (genre, elementId) => {
+  /* Code to fetch top 7 movies by genre and call the displayMovies function */
+  /* ... */
   let url = `http://localhost:8000/api/v1/titles/?genre=${genre}&sort_by=-imdb_score`;
   const allMovies = [];
   while (allMovies.length < 7) {
@@ -59,6 +66,8 @@ const fetchTopMoviesByGenre = async (genre, elementId) => {
 };
 
 const fetchTop7OverallMovies = async () => {
+  /* Code to fetch top 7 overall movies and call the displayMovies function */
+  /* ... */
   let url = `http://localhost:8000/api/v1/titles/?sort_by=-imdb_score`;
   const top7Movies = [];
   while (top7Movies.length < 7) {
@@ -72,29 +81,32 @@ const fetchTop7OverallMovies = async () => {
   displayMovies(topMovies2, 'top-7-movies-overall');
 };
 
+// Add an event listener to close the modal when the close button is clicked
 document.getElementById('modal-close-button').addEventListener('click', () => {
   document.getElementById('myModal').style.display = 'none';
 });
 
 
 function scrollToLeft(elementId) {
+  /* Code to scroll the container to the left */  
   var element = document.getElementById(elementId);
   element.scrollLeft -= 20; // adjust the scroll amount
 }
 
 function scrollToRight(elementId) {
+  /* Code to scroll the container to the right */  
   const container = document.getElementById(elementId);
   container.scrollLeft += 20; //  adjust the scroll amount
 }
 
 
-
+// Function calls to fetch and display movies
 fetchTopOverallMovie();
 fetchTop7OverallMovies();
 fetchTopMoviesByGenre('Sci-Fi', 'sci-fi-movie-container');
 fetchTopMoviesByGenre('Fantasy', 'fantasy-movie-container');
 fetchTopMoviesByGenre('Family', 'family-movie-container');
-console.log("Hello World");
+
 
 
 
